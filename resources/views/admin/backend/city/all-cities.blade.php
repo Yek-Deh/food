@@ -1,5 +1,6 @@
 @extends('admin.dashboard')
 @section('admin_content')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <div class="page-content">
         <div class="container-fluid">
 
@@ -72,7 +73,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="myModalLabel">Add City</h5>
+                    <h5 class="modal-title" id="myModalLabel">Add Cityy</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                 </div>
@@ -140,6 +141,7 @@
 
     <script type="text/javascript">
         function cityEdit(id) {
+            $('#city-name').val('');
             $.ajax({
                 type: 'GET',
                 url: '/edit/city/' + id,
@@ -150,6 +152,36 @@
                     $('#city-id').val(data.id);
                 }
             })
+
         }
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#myForm').validate({
+                rules: {
+                    city_name: {
+                        required: true,
+                    },
+                },
+                messages: {
+                    city_name: {
+                        required: 'Please Enter City NAME',
+                    },
+
+                },
+                errorElement: 'span',
+                errorPlacement: function (error, element) {
+                    error.addClass('invalid-feedback');
+                    element.closest('.form-group').append(error);
+                },
+                highlight: function (element, errorClass, validClass) {
+                    $(element).addClass('is-invalid');
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $(element).removeClass('is-invalid');
+                },
+            });
+        });
+
     </script>
 @endsection
