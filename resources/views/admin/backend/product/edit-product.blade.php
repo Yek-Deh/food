@@ -145,19 +145,19 @@
 
                                     <div class="form-check mt-2">
                                         <input class="form-check-input" name="best_seller" type="checkbox"
-                                               id="formCheck2"
+                                               id="formCheckBestSeller"
                                                value="1" {{ $product->best_seller == 1 ? 'checked' : '' }} >
-                                        <label class="form-check-label" for="formCheck2">
+                                        <label class="form-check-label" for="formCheckBestSeller">
                                             Best Seller
                                         </label>
                                     </div>
 
                                     <div class="form-check mt-2">
-                                        <input class="form-check-input" name="most_populer" type="checkbox"
-                                               id="formCheck2"
-                                               value="1" {{ $product->most_populer == 1 ? 'checked' : '' }} >
-                                        <label class="form-check-label" for="formCheck2">
-                                            Most Populer
+                                        <input class="form-check-input" name="most_popular" type="checkbox"
+                                               id="formCheckMostPopular"
+                                               value="1" {{ $product->most_popular == 1 ? 'checked' : '' }} >
+                                        <label class="form-check-label" for="formCheckMostPopular">
+                                            Most Popular
                                         </label>
                                     </div>
 

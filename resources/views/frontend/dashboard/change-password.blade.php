@@ -1,5 +1,5 @@
-@include('frontend.dashboard.header')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+@extends('frontend.dashboard.dashboard')
+@section('dashboard')
 @php
     $id =\Illuminate\Support\Facades\Auth::user()->id;
     $profileData = \App\Models\User::find($id);
@@ -74,5 +74,5 @@
         })
     })
 </script>
-@include('frontend.dashboard.footer')
+@endsection
 
