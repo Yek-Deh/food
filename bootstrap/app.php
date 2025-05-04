@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Middleware\Admin;
+use App\Http\Middleware\CheckPermission;
 use App\Http\Middleware\Client;
 use App\Http\Middleware\ClientStatus;
 use Illuminate\Foundation\Application;
@@ -19,6 +20,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'admin' => Admin::class,
             'client' => Client::class,
             'status' => ClientStatus::class,
+            'permission' => CheckPermission::class
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
